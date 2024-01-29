@@ -2,7 +2,7 @@
 
 - It will run E2E tests 
 - Trigger Github Action workflow to run in full parallelisation using sharding 
-- Generate html reports
+- Generate Allure reports
 - Publish the reports on github pages
 - It includes workflow and script to manually trigger cleanup of old reports (can be customized for cron job)
 
