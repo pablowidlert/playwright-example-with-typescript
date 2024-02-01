@@ -1,4 +1,6 @@
 #!/bin/bash
+mkdir pw-index
+cd pw-index
 touch index.html
 echo "${1}"
 
