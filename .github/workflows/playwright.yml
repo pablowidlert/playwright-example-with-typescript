@@ -88,7 +88,8 @@ jobs:
       run:   |
               chmod +x ./CustomIndexHtml.sh
                           ./CustomIndexHtml.sh ${{ steps.timestampid.outputs.timestamp }}
-
+              ls
+        
     - name: Push the new files to github pages
     # This will create a separate branch called gh-pages where it will store only reports. And from where it will push all future changes 
     # to github pages. Having a separate branch will keep the reports and changes commits separate to your main/master
