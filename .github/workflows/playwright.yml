@@ -91,7 +91,11 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: playwright-report # from what folder to take files. It takes only contents
-        #destination_dir: ${{ steps.timestampid.outputs.timestamp }} # a sub-directory where to publish to avoid overwriting other reports
-        
+        destination_dir: ${{ steps.timestampid.outputs.timestamp }} # a sub-directory where to publish to avoid overwriting other reports
+    
+    - name:  Update index.html in root # Using shell script to update
+      run:   |
+              chmod +x ./CustomIndexHtml.sh
+                          ./CustomIndexHtml.sh ${{ steps.timestampid.outputs.timestamp }} 
     - name: Write URL in summary
       run: echo "### Test results (link available after 20 secs) - https://${{ github.repository_owner }}.github.io/playwright-example-with-typescript/${{ steps.timestampid.outputs.timestamp }}/" >> $GITHUB_STEP_SUMMARY
